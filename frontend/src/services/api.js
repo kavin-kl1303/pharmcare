@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+const defaultBackendUrl = 'https://pharmcare-udkm.onrender.com/api';
+
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || '/api',
+  baseURL: import.meta.env.VITE_API_URL || (import.meta.env.PROD ? defaultBackendUrl : '/api'),
   withCredentials: true,
 });
 
