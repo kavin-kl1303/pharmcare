@@ -20,8 +20,11 @@ const StockReceiptItem = require('../models/StockReceiptItem');
 const Notification = require('../models/Notification');
 const AuditLog = require('../models/AuditLog');
 
+const defaultAtlasUri =
+  'mongodb://pharm:kavin@ac-98zb9do-shard-00-00.ggygoka.mongodb.net:27017,ac-98zb9do-shard-00-01.ggygoka.mongodb.net:27017,ac-98zb9do-shard-00-02.ggygoka.mongodb.net:27017/pharmacare?ssl=true&replicaSet=atlas-l9sydc-shard-0&authSource=admin&retryWrites=true&w=majority';
+
 const seedData = async () => {
-  const uri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/pharmacare';
+  const uri = process.env.MONGODB_URI || process.env.MONGO_URI || defaultAtlasUri;
   console.log(`[Seed] Connecting to MongoDB: ${uri}`);
   await mongoose.connect(uri);
 
