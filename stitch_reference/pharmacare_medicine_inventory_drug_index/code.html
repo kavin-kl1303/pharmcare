@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "error": "#ba1a1a", "secondary-fixed-dim": "#93ccff", "tertiary": "#006947", "tertiary-container": "#00855b", "on-tertiary": "#ffffff", "secondary-fixed": "#cce5ff", "on-error-container": "#93000a", "primary-container": "#008378", "surface-dim": "#d2d9f4", "on-surface": "#131b2e", "on-primary-fixed-variant": "#005049", "on-primary": "#ffffff", "on-primary-container": "#f4fffc", "inverse-surface": "#283044", "outline": "#6d7a77", "on-tertiary-container": "#f5fff6", "tertiary-fixed-dim": "#4edea3", "on-secondary-container": "#00476e", "outline-variant": "#bcc9c6", "surface-tint": "#006a61", "inverse-on-surface": "#eef0ff", "background": "#faf8ff", "primary": "#00685f", "error-container": "#ffdad6", "on-secondary": "#ffffff", "on-surface-variant": "#3d4947", "on-primary-fixed": "#00201d", "on-secondary-fixed": "#001d31", "surface-container-high": "#e2e7ff", "on-secondary-fixed-variant": "#004b73", "on-tertiary-fixed-variant": "#005236", "surface-variant": "#dae2fd", "surface-bright": "#faf8ff", "secondary": "#006398", "on-error": "#ffffff", "primary-fixed": "#89f5e7", "secondary-container": "#5bb8fe", "surface-container-lowest": "#ffffff", "surface-container-highest": "#dae2fd", "inverse-primary": "#6bd8cb", "on-tertiary-fixed": "#002113", "tertiary-fixed": "#6ffbbe", "on-background": "#131b2e", "primary-fixed-dim": "#6bd8cb", "surface-container-low": "#f2f3ff", "surface-container": "#eaedff", "surface": "#faf8ff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-md": "0.875rem", "gutter": "1.25rem", "space-xs": "0.25rem", "margin": "1.75rem", "space-sm": "0.5rem", "space-xl": "2rem", "margin-sm": "1rem", "space-lg": "1.25rem", "gutter-sm": "0.75rem" }, "fontFamily": { "headline-lg": [ "Inter" ], "label-sm": [ "Inter" ], "headline-lg-mobile": [ "Inter" ], "headline-sm": [ "Inter" ], "body-sm": [ "Inter" ], "body-lg": [ "Inter" ], "label-md": [ "Inter" ], "headline-xl": [ "Inter" ], "body-md": [ "Inter" ], "headline-xl-mobile": [ "Inter" ], "headline-md": [ "Inter" ], "mono-data": [ "Inter" ] }, "fontSize": { "headline-lg": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600" } ], "headline-lg-mobile": [ "22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "headline-sm": [ "16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" } ], "body-sm": [ "13px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" } ], "body-lg": [ "16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" } ], "headline-xl": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" } ], "body-md": [ "14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" } ], "headline-xl-mobile": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-md": [ "20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "mono-data": [ "13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" } ] } } } }</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col h-full"><div class="h-16 px-space-lg flex items-center justify-between bg-surface-container-low/40"><div class="flex items-center gap-space-sm"><img alt="PharmaCare Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VY0ElsKx2pKTdgNPw-gEExinjnXWRq9SEu4jwEj3zAV4ktmrIKqtEtgPKFnEhEqZI_A-CNhosHeu54y4ZhhEI-EJEBYFUtPYQ19OvWSyxOotEFeHd6fuJML0do-sp3tzXDaKkDBiC2_zA_lUpOAjuGgWR6DzINq3wVfOnlhNINatdsb5V6f39jVpQX9MtpDICB-El4Gp4m0EPULnEn_jBST8Tv3tTBEAPyTEsosQluEUP85oEvmgOWJA"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold leading-tight">PharmaCare</span><span class="font-label-sm text-label-sm text-outline tracking-wider uppercase">PMS Enterprise v2.4</span></div></div><span class="px-space-xs py-0.5 rounded bg-primary-container/20 text-primary font-label-sm text-label-sm">HQ-BLR</span></div><div class="flex-1 overflow-y-auto px-space-md py-space-md space-y-space-md"><div class="space-y-1"><div class="px-space-sm py-1 font-label-sm text-label-sm text-outline font-semibold tracking-wider uppercase">Main Operations</div><nav class="space-y-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm"><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Dashboard</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="sales-pos-billing" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span>Sales &amp; POS Billing</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-2.5 transition-all bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm" data-path="medicines" href="#"><span class="material-symbols-outlined text-[20px]">medication</span><span>Medicines</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="inventory" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span>Inventory</span></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="batches-expiry" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">warning</span><span>Batches &amp; Expiry</span></div><span class="px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-mono-data text-[11px] font-semibold">12</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="prescriptions" href="#"><span class="material-symbols-outlined text-[20px]">prescriptions</span><span>Prescriptions</span></a></nav></div><div class="space-y-1"><div class="px-space-sm py-1 font-label-sm text-label-sm text-outline font-semibold tracking-wider uppercase">Management</div><nav class="space-y-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm"><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="suppliers" href="#"><span class="material-symbols-outlined text-[20px]">local_shipping</span><span>Suppliers</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="customers" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span>Customers</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="purchase-orders" href="#"><span class="material-symbols-outlined text-[20px]">note_add</span><span>Purchase Orders</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="reports-analytics" href="#"><span class="material-symbols-outlined text-[20px]">monitoring</span><span>Reports &amp; Analytics</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="staff-roles" href="#"><span class="material-symbols-outlined text-[20px]">admin_panel_settings</span><span>Staff &amp; Roles</span></a></nav></div><div class="space-y-1"><div class="px-space-sm py-1 font-label-sm text-label-sm text-outline font-semibold tracking-wider uppercase">System</div><nav class="space-y-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm"><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="notifications" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">notifications</span><span>Notifications</span></div><span class="px-1.5 py-0.5 rounded-full bg-error text-on-error font-mono-data text-[11px] font-semibold">4</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-error hover:bg-error-container hover:text-on-error-container transition-all font-body-md text-body-md" data-path="login" href="#"><span class="material-symbols-outlined text-[20px]">logout</span><span>Logout</span></a></nav></div></div><div class="p-space-md m-space-md rounded-xl bg-surface-container flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-2.5 h-2.5 rounded-full bg-tertiary"></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-semibold">GSTIN Verified</span><span class="font-mono-data text-[11px] text-outline">29AAAAA0000A1Z5</span></div></div><span class="material-symbols-outlined text-outline text-[18px]">verified</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter"><div class="flex items-center gap-gutter flex-1 max-w-2xl"><div class="relative w-full max-w-md"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span><input class="w-full pl-10 pr-20 py-2 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-colors" placeholder="Search medicines, batches, customers, invoices..." type="text"/><div class="absolute right-2.5 top-1/2 -translate-y-1/2 flex items-center gap-1"><kbd class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono-data text-[10px] font-semibold">Ctrl</kbd><kbd class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono-data text-[10px] font-semibold">K</kbd></div></div><div class="hidden xl:flex items-center gap-space-xs text-on-surface-variant font-mono-data text-mono-data bg-surface-container-low px-3 py-1.5 rounded-lg"><span class="material-symbols-outlined text-[16px] text-tertiary">schedule</span><span>Thursday, 24 Oct 2024</span><span class="text-outline">•</span><span class="font-semibold text-primary">IST</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm"><button class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[18px]">point_of_sale</span><span>+ Quick Sale (POS)</span></button><button class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-lowest text-primary hover:bg-surface-container-low font-label-md text-label-md transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[18px]">add_circle</span><span>+ Add Medicine</span></button></div><div class="h-6 w-px bg-surface-container-high mx-1"></div><div class="relative"><button aria-label="Notifications" class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors relative" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></button></div><div class="h-6 w-px bg-surface-container-high mx-1"></div><div class="flex items-center gap-space-sm cursor-pointer hover:bg-surface-container-low p-1.5 rounded-xl transition-colors"><div class="relative"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYgQerTH4T1nMqbS87Kh8eor4E4yhOvEm5ABJN0bcQ-HkVZVoTklHM_S3C4a-RbNgKQ3fOogjrT-x35cLYilldrUeP6TyFECBOzUvpUBdbaB6TK4yiiyk6cz-XsdCJPAdF9PHk6lKa9n77vMb8sHCrNLweQdtCy5tRijgcYZNiiDMyBrvhRJ05JlxbJU2ig-5v-955mbTbIy-ZIxfQFc15PoOIAG1V23brzL4qaGlkp-jn705h6QmZ"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-tertiary ring-2 ring-surface-container-lowest"></span></div><div class="hidden md:flex flex-col text-left"><div class="flex items-center gap-1.5"><span class="font-label-md text-label-md text-on-surface font-semibold leading-none">Dr. Priya Sharma</span><span class="px-1.5 py-0.2 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-[10px] font-bold uppercase">Admin</span></div><span class="font-label-sm text-label-sm text-outline leading-tight mt-0.5">Chief Pharmacist • Reg #64821</span></div><span class="material-symbols-outlined text-outline text-[18px]">expand_more</span></div></div></header><main class="relative pt-16 bg-background w-full min-h-screen px-gutter py-margin"><div class="flex flex-col w-full">
+<!-- Dynamic Top Bar & Statistics Strip -->
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md mb-6">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-mono-data text-[11px] font-semibold tracking-wide uppercase">Catalog Registry</span>
+<span class="font-mono-data text-label-sm text-outline">•</span>
+<span class="font-mono-data text-label-sm text-tertiary font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Live Sync Enabled
+        </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mt-1">Medicine Master Catalog &amp; Drug Index</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage 1,842 active pharmaceutical formulations, schedules, reorder limits, and pricing structures.</p>
+</div>
+<!-- Quick Action Toolbar -->
+<div class="flex flex-wrap items-center gap-2.5">
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">cloud_download</span>
+<span>Import Central DB</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">print</span>
+<span>Bulk Barcodes</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">file_download</span>
+<span>Export CSV</span>
+</button>
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md transition-all shadow-md" id="open-add-drawer-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>+ Add New Medicine</span>
+</button>
+</div>
+</div>
+<!-- Micro-Metric KPI Tiles -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Formulations</span>
+<span class="font-headline-md text-headline-md text-on-surface mt-0.5 font-bold">1,842</span>
+<span class="font-mono-data text-[11px] text-tertiary flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span> +24 this month
+        </span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">medication</span>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Schedule H/H1</span>
+<span class="font-headline-md text-headline-md text-on-surface mt-0.5 font-bold">648</span>
+<span class="font-mono-data text-[11px] text-error flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">verified_user</span> Rx Log Mandatory
+        </span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-error-container/40 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[22px]">warning</span>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Under Reorder Point</span>
+<span class="font-headline-md text-headline-md text-on-surface mt-0.5 font-bold">18</span>
+<span class="font-mono-data text-[11px] text-secondary flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">sync_alt</span> POs Triggered
+        </span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">inventory_2</span>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Batches Expiring (30d)</span>
+<span class="font-headline-md text-headline-md text-on-surface mt-0.5 font-bold">5</span>
+<span class="font-mono-data text-[11px] text-error flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">event_busy</span> Action Required
+        </span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-error-container/30 flex items-center justify-center text-on-error-container">
+<span class="material-symbols-outlined text-[22px]">timer</span>
+</div>
+</div>
+</div>
+<!-- Search & Multi-Filter Control Strip -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm mb-5 flex flex-col gap-3.5">
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center gap-3">
+<!-- Search Input -->
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="w-full pl-10 pr-24 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-all shadow-inner" id="master-search-input" placeholder="Search by Brand name, Generic formulation, HSN code or Barcode..." type="text"/>
+<div class="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1.5 text-outline">
+<span class="material-symbols-outlined text-[18px]">barcode_scanner</span>
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container font-mono-data text-[10px]">F2</kbd>
+</div>
+</div>
+<!-- Quick Toggles -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 lg:pb-0">
+<!-- Category Filter -->
+<div class="relative min-w-[150px]">
+<select class="w-full appearance-none pl-3 pr-8 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none cursor-pointer">
+<option>All Categories</option>
+<option>Antibiotics</option>
+<option>Gastrointestinal</option>
+<option>Cardiovascular</option>
+<option>Analgesics / NSAID</option>
+<option>Dermatological</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-[18px]">arrow_drop_down</span>
+</div>
+<!-- Drug Schedule Filter -->
+<div class="relative min-w-[140px]">
+<select class="w-full appearance-none pl-3 pr-8 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none cursor-pointer">
+<option>All Schedules</option>
+<option>Schedule H</option>
+<option>Schedule H1</option>
+<option>Schedule X</option>
+<option>OTC (Unscheduled)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-[18px]">arrow_drop_down</span>
+</div>
+<!-- Stock Status Filter -->
+<div class="relative min-w-[130px]">
+<select class="w-full appearance-none pl-3 pr-8 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none cursor-pointer">
+<option>All Stock</option>
+<option>In Stock (&gt;20)</option>
+<option>Low Stock (&lt;10)</option>
+<option>Out of Stock (0)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-[18px]">arrow_drop_down</span>
+</div>
+<!-- Manufacturer Filter -->
+<div class="relative min-w-[150px]">
+<select class="w-full appearance-none pl-3 pr-8 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none cursor-pointer">
+<option>All Manufacturers</option>
+<option>Cipla Ltd</option>
+<option>Sun Pharma</option>
+<option>Dr. Reddy's Lab</option>
+<option>GSK Pharmaceuticals</option>
+<option>Mankind Pharma</option>
+<option>USV Pvt Ltd</option>
+<option>Micro Labs Ltd</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-[18px]">arrow_drop_down</span>
+</div>
+<button class="p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant transition-colors" title="Reset Filters" type="button">
+<span class="material-symbols-outlined text-[20px]">filter_alt_off</span>
+</button>
+</div>
+</div>
+<!-- Active Filter Badges Bar -->
+<div class="flex items-center gap-2 pt-1">
+<span class="font-label-sm text-label-sm text-outline">Applied Filters:</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-on-surface font-mono-data text-[11px]">
+        Schedule: Any
+        <span class="material-symbols-outlined text-[13px] text-outline cursor-pointer hover:text-error">close</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-on-surface font-mono-data text-[11px]">
+        Status: Active formulations only
+        <span class="material-symbols-outlined text-[13px] text-outline cursor-pointer hover:text-error">close</span>
+</span>
+<button class="font-label-sm text-label-sm text-primary hover:underline ml-auto">Clear all filters</button>
+</div>
+</div>
+<!-- Main Pharmaceutical Master Table Container -->
+<div class="rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden flex flex-col">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3.5 px-4 font-semibold w-12 text-center">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer" type="checkbox"/>
+</th>
+<th class="py-3.5 px-4 font-semibold">Medicine Details</th>
+<th class="py-3.5 px-4 font-semibold">Generic &amp; HSN</th>
+<th class="py-3.5 px-4 font-semibold">Schedule</th>
+<th class="py-3.5 px-4 font-semibold">Manufacturer</th>
+<th class="py-3.5 px-4 font-semibold">Batch &amp; Expiry</th>
+<th class="py-3.5 px-4 font-semibold text-right">Purchase / MRP</th>
+<th class="py-3.5 px-4 font-semibold min-w-[140px]">Stock Level</th>
+<th class="py-3.5 px-4 font-semibold text-center">Status</th>
+<th class="py-3.5 px-4 font-semibold text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface font-body-md text-body-md">
+<!-- ROW 1: Augmentin 625 Duo -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-4 px-4 text-center">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">pill</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">Augmentin 625 Duo</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container text-on-surface-variant font-mono-data text-[10px] uppercase">Tab</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline">Amoxicillin 500mg + Clavulanic 125mg</span>
+<div class="flex items-center gap-2 mt-0.5 font-mono-data text-[11px] text-outline">
+<span>Rack: A-04</span>
+<span>•</span>
+<span>10 Tabs / Strip</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium text-on-surface">Amoxicillin Trihydrate</span>
+<span class="font-mono-data text-label-sm text-outline mt-0.5">HSN: 300420</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-mono-data text-[11px] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> Schedule H1
+              </span>
+</td>
+<td class="py-4 px-4 font-body-sm text-body-sm text-on-surface">
+<span class="font-medium">GSK Pharmaceuticals</span>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-mono-data text-body-sm font-semibold text-on-surface">AG-102</span>
+<span class="font-mono-data text-label-sm text-tertiary font-medium">Exp: 11/2025</span>
+</div>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex flex-col items-end">
+<span class="font-mono-data text-body-md font-semibold text-on-surface">₹ 204.00</span>
+<span class="font-mono-data text-label-sm text-outline">Cost: ₹ 155.00</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center font-mono-data text-[12px]">
+<span class="font-semibold text-on-surface">38 Strips</span>
+<span class="text-tertiary font-medium">Normal</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 65%;"></div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 text-center">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container/20 text-tertiary font-label-sm text-[11px] font-semibold">Active</span>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded-lg text-outline hover:text-primary hover:bg-surface-container transition-colors" title="Edit Drug" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-outline hover:text-secondary hover:bg-surface-container transition-colors" title="Barcode Print" type="button">
+<span class="material-symbols-outlined text-[18px]">qr_code_2</span>
+</button>
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface transition-colors" title="More Options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 2: Dolo 650 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-4 px-4 text-center">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">pill</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">Dolo 650</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container text-on-surface-variant font-mono-data text-[10px] uppercase">Tab</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline">Paracetamol 650mg</span>
+<div class="flex items-center gap-2 mt-0.5 font-mono-data text-[11px] text-outline">
+<span>Rack: B-12</span>
+<span>•</span>
+<span>15 Tabs / Strip</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium text-on-surface">Acetaminophen (Paracetamol)</span>
+<span class="font-mono-data text-label-sm text-outline mt-0.5">HSN: 300490</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-mono-data text-[11px] font-semibold">
+                OTC Standard
+              </span>
+</td>
+<td class="py-4 px-4 font-body-sm text-body-sm text-on-surface">
+<span class="font-medium">Micro Labs Ltd</span>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-mono-data text-body-sm font-semibold text-on-surface">DL-884</span>
+<span class="font-mono-data text-label-sm text-tertiary font-medium">Exp: 08/2026</span>
+</div>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex flex-col items-end">
+<span class="font-mono-data text-body-md font-semibold text-on-surface">₹ 30.50</span>
+<span class="font-mono-data text-label-sm text-outline">Cost: ₹ 21.00</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center font-mono-data text-[12px]">
+<span class="font-semibold text-on-surface">142 Strips</span>
+<span class="text-tertiary font-medium">Optimal</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 90%;"></div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 text-center">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container/20 text-tertiary font-label-sm text-[11px] font-semibold">Active</span>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded-lg text-outline hover:text-primary hover:bg-surface-container transition-colors" title="Edit Drug" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-outline hover:text-secondary hover:bg-surface-container transition-colors" title="Barcode Print" type="button">
+<span class="material-symbols-outlined text-[18px]">qr_code_2</span>
+</button>
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface transition-colors" title="More Options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 3: Glycomet-GP 1 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-4 px-4 text-center">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">pill</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">Glycomet-GP 1</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container text-on-surface-variant font-mono-data text-[10px] uppercase">Tab</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline">Metformin 500mg + Glimepiride 1mg</span>
+<div class="flex items-center gap-2 mt-0.5 font-mono-data text-[11px] text-outline">
+<span>Rack: C-01</span>
+<span>•</span>
+<span>15 Tabs / Strip</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium text-on-surface">Metformin Hydrochloride</span>
+<span class="font-mono-data text-label-sm text-outline mt-0.5">HSN: 300431</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-mono-data text-[11px] font-semibold">
+                Schedule H
+              </span>
+</td>
+<td class="py-4 px-4 font-body-sm text-body-sm text-on-surface">
+<span class="font-medium">USV Pvt Ltd</span>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-mono-data text-body-sm font-semibold text-on-surface">GL-901</span>
+<span class="font-mono-data text-label-sm text-on-surface-variant font-medium">Exp: 09/2025</span>
+</div>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex flex-col items-end">
+<span class="font-mono-data text-body-md font-semibold text-on-surface">₹ 115.00</span>
+<span class="font-mono-data text-label-sm text-outline">Cost: ₹ 82.00</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center font-mono-data text-[12px]">
+<span class="font-semibold text-on-surface">8 Strips</span>
+<span class="text-error font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">warning</span> Low
+                  </span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-error rounded-full" style="width: 18%;"></div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 text-center">
+<span class="px-2 py-0.5 rounded-full bg-error-container/30 text-on-error-container font-label-sm text-[11px] font-semibold">Low Stock</span>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded-lg text-outline hover:text-primary hover:bg-surface-container transition-colors" title="Edit Drug" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-outline hover:text-secondary hover:bg-surface-container transition-colors" title="Barcode Print" type="button">
+<span class="material-symbols-outlined text-[18px]">qr_code_2</span>
+</button>
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface transition-colors" title="More Options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 4: Pantocid 40 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-4 px-4 text-center">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">pill</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">Pantocid 40</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container text-on-surface-variant font-mono-data text-[10px] uppercase">Tab</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline">Pantoprazole 40mg</span>
+<div class="flex items-center gap-2 mt-0.5 font-mono-data text-[11px] text-outline">
+<span>Rack: A-11</span>
+<span>•</span>
+<span>15 Tabs / Strip</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium text-on-surface">Pantoprazole Sodium</span>
+<span class="font-mono-data text-label-sm text-outline mt-0.5">HSN: 300490</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-mono-data text-[11px] font-semibold">
+                Schedule H
+              </span>
+</td>
+<td class="py-4 px-4 font-body-sm text-body-sm text-on-surface">
+<span class="font-medium">Sun Pharma</span>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-mono-data text-body-sm font-semibold text-on-surface">P441</span>
+<span class="font-mono-data text-label-sm text-error font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">alarm</span> Exp: 11/2024 (14d)
+                </span>
+</div>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex flex-col items-end">
+<span class="font-mono-data text-body-md font-semibold text-on-surface">₹ 155.00</span>
+<span class="font-mono-data text-label-sm text-outline">Cost: ₹ 110.00</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center font-mono-data text-[12px]">
+<span class="font-semibold text-on-surface">24 Strips</span>
+<span class="text-on-surface-variant font-medium">Adequate</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full" style="width: 48%;"></div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 text-center">
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-[11px] font-semibold">Near Expiry</span>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded-lg text-outline hover:text-primary hover:bg-surface-container transition-colors" title="Edit Drug" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-outline hover:text-secondary hover:bg-surface-container transition-colors" title="Barcode Print" type="button">
+<span class="material-symbols-outlined text-[18px]">qr_code_2</span>
+</button>
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface transition-colors" title="More Options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 5: Ecosprin 75 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-4 px-4 text-center">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">pill</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">Ecosprin 75</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container text-on-surface-variant font-mono-data text-[10px] uppercase">Tab</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline">Aspirin (Acetylsalicylic) 75mg</span>
+<div class="flex items-center gap-2 mt-0.5 font-mono-data text-[11px] text-outline">
+<span>Rack: D-05</span>
+<span>•</span>
+<span>14 Tabs / Strip</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium text-on-surface">Acetylsalicylic Acid</span>
+<span class="font-mono-data text-label-sm text-outline mt-0.5">HSN: 300490</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-mono-data text-[11px] font-semibold">
+                OTC Standard
+              </span>
+</td>
+<td class="py-4 px-4 font-body-sm text-body-sm text-on-surface">
+<span class="font-medium">USV Pvt Ltd</span>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-mono-data text-body-sm font-semibold text-on-surface">EC-221</span>
+<span class="font-mono-data text-label-sm text-tertiary font-medium">Exp: 03/2026</span>
+</div>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex flex-col items-end">
+<span class="font-mono-data text-body-md font-semibold text-on-surface">₹ 9.20</span>
+<span class="font-mono-data text-label-sm text-outline">Cost: ₹ 4.80</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center font-mono-data text-[12px]">
+<span class="font-semibold text-on-surface">320 Strips</span>
+<span class="text-tertiary font-medium">Surplus</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 95%;"></div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 text-center">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container/20 text-tertiary font-label-sm text-[11px] font-semibold">Active</span>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded-lg text-outline hover:text-primary hover:bg-surface-container transition-colors" title="Edit Drug" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-outline hover:text-secondary hover:bg-surface-container transition-colors" title="Barcode Print" type="button">
+<span class="material-symbols-outlined text-[18px]">qr_code_2</span>
+</button>
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface transition-colors" title="More Options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 6: Rantac 150 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors bg-error-container/5">
+<td class="py-4 px-4 text-center">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-error-container/40 flex items-center justify-center text-error shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">block</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface truncate line-through decoration-error">Rantac 150</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container text-on-surface-variant font-mono-data text-[10px] uppercase">Tab</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline">Ranitidine 150mg</span>
+<div class="flex items-center gap-2 mt-0.5 font-mono-data text-[11px] text-error font-medium">
+<span>Quarantined Bay</span>
+<span>•</span>
+<span>Recalled / Expired</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium text-on-surface">Ranitidine HCl</span>
+<span class="font-mono-data text-label-sm text-outline mt-0.5">HSN: 300490</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-mono-data text-[11px] font-semibold">
+                Schedule H
+              </span>
+</td>
+<td class="py-4 px-4 font-body-sm text-body-sm text-on-surface">
+<span class="font-medium">J.B. Chemicals</span>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-mono-data text-body-sm font-semibold text-error">RN-003</span>
+<span class="font-mono-data text-label-sm text-error font-bold">EXPIRED</span>
+</div>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex flex-col items-end opacity-60">
+<span class="font-mono-data text-body-md font-semibold text-on-surface">₹ 28.00</span>
+<span class="font-mono-data text-label-sm text-outline">Cost: ₹ 18.00</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center font-mono-data text-[12px]">
+<span class="font-bold text-error">0 Strips</span>
+<span class="text-error font-medium">Locked</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-error rounded-full" style="width: 0%;"></div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 text-center">
+<span class="px-2 py-0.5 rounded-full bg-error text-on-error font-label-sm text-[11px] font-bold">Expired</span>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded-lg text-error hover:bg-error-container/30 transition-colors" title="Dispose / Return to Supplier" type="button">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+</button>
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface transition-colors" title="More Options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination & Bulk Status Footer -->
+<div class="p-4 bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Showing <span class="font-bold text-on-surface">1 - 6</span> of <span class="font-bold text-on-surface">1,842</span> items</span>
+<div class="h-4 w-px bg-surface-container-high hidden sm:block"></div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-outline">
+<span>Rows per page:</span>
+<select class="bg-surface-container px-2 py-1 rounded text-on-surface font-mono-data text-label-sm focus:outline-none">
+<option>10</option>
+<option>25</option>
+<option>50</option>
+<option>100</option>
+</select>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-outline opacity-50 cursor-not-allowed font-label-md text-label-md flex items-center gap-1" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+<span>Previous</span>
+</button>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg bg-primary text-on-primary font-mono-data text-[12px] font-bold">1</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface font-mono-data text-[12px]">2</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface font-mono-data text-[12px]">3</button>
+<span class="px-1 text-outline">...</span>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface font-mono-data text-[12px]">185</button>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1" type="button">
+<span>Next</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Slide-Over Drawer & Modal Overlay (Right Side) -->
+<div class="fixed inset-0 z-50 flex justify-end transition-opacity duration-300 pointer-events-auto" id="add-medicine-drawer">
+<!-- Backdrop Blur Scrim -->
+<div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm transition-opacity" id="drawer-backdrop"></div>
+<!-- Drawer Surface Container -->
+<div class="relative w-full max-w-2xl bg-surface-container-lowest h-full shadow-2xl flex flex-col z-10 overflow-hidden transform transition-transform duration-300 ease-out">
+<!-- Drawer Header -->
+<div class="p-6 bg-surface-container-low flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[24px]">medication_liquid</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Add New Pharmaceutical Drug</h2>
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-mono-data text-[11px] font-semibold">FORM-MED-01</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Register drug molecule, classification rules, batch limits &amp; tax schedule.</p>
+</div>
+</div>
+<button class="p-2 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container transition-colors" id="close-drawer-btn" type="button">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+</div>
+<!-- Drawer Scrollable Form Body -->
+<form class="flex-1 overflow-y-auto p-6 space-y-6" id="add-medicine-form">
+<!-- Safety Alert Guidance Box -->
+<div class="p-4 rounded-xl bg-surface-container-low flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">info</span>
+<div class="font-body-sm text-body-sm text-on-surface">
+<p class="font-semibold text-primary">CDSCO Regulatory Adherence</p>
+<p class="text-on-surface-variant mt-0.5">Ensure Schedule H &amp; H1 compounds have valid HSN 3004 series designations and prescription validation toggled on.</p>
+</div>
+</div>
+<!-- Section 1: Basic Information -->
+<div class="space-y-4">
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-primary-container text-on-primary-container font-mono-data text-[11px] flex items-center justify-center font-bold">1</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Basic Formulation</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">* Required</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-1 md:col-span-2">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Brand / Trade Name *</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest" placeholder="e.g. Augmentin 625 Duo, Telma 40, Dolo 650" required="" type="text"/>
+</div>
+<div class="space-y-1 md:col-span-2">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Generic Molecule Composition *</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest" placeholder="e.g. Amoxicillin Trihydrate IP 500mg + Potassium Clavulanate IP 125mg" required="" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Dosage Form *</label>
+<select class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none cursor-pointer">
+<option>Tablet</option>
+<option>Capsule</option>
+<option>Syrup / Suspension</option>
+<option>Injection / IV Vial</option>
+<option>Topical Ointment / Gel</option>
+<option>Inhaler / Respule</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Dosage Strength *</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest" placeholder="e.g. 625mg, 500mg, 10mg/5ml" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">HSN Code (GST Classification) *</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-mono-data text-body-md focus:outline-none focus:bg-surface-container-lowest" placeholder="e.g. 300420" required="" type="text" value="300420"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Unit Packaging</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest" placeholder="e.g. 10 Tablets per Strip, 100ml Bottle" type="text"/>
+</div>
+</div>
+</div>
+<!-- Section 2: Drug Classification & Schedule -->
+<div class="space-y-4 pt-3">
+<div class="flex items-center gap-2 pb-1">
+<span class="w-5 h-5 rounded-full bg-primary-container text-on-primary-container font-mono-data text-[11px] flex items-center justify-center font-bold">2</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Drug Classification &amp; Safety Controls</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Therapeutic Category</label>
+<select class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none cursor-pointer">
+<option>Antibiotics / Anti-infectives</option>
+<option>Analgesics / NSAIDs</option>
+<option>Cardiovascular / Antihypertensive</option>
+<option>Gastrointestinal / Antacids</option>
+<option>Endocrine / Antidiabetic</option>
+<option>Central Nervous System</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Drug Schedule Category</label>
+<select class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none cursor-pointer">
+<option>Schedule H (Doctor Rx)</option>
+<option>Schedule H1 (Warning Register)</option>
+<option>Schedule X (Narcotic / Psychotropic)</option>
+<option>OTC / General Sale (Unscheduled)</option>
+<option>Schedule G (Hormonal / Antihistamine)</option>
+</select>
+</div>
+<!-- Prescription Mandatory Switch -->
+<div class="md:col-span-2 p-3.5 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[22px]">prescriptions</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">Prescription Mandatory for Dispensing</span>
+<span class="font-body-sm text-body-sm text-outline">POS checkout will require entering doctor's MCI number &amp; patient script ID.</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Section 3: Pricing, Commercials & Taxes -->
+<div class="space-y-4 pt-3">
+<div class="flex items-center gap-2 pb-1">
+<span class="w-5 h-5 rounded-full bg-primary-container text-on-primary-container font-mono-data text-[11px] flex items-center justify-center font-bold">3</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Commercials, MRP &amp; GST Rates</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Purchase Rate (₹)</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-mono-data text-body-md focus:outline-none focus:bg-surface-container-lowest" placeholder="155.00" step="0.01" type="number"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Max Retail (₹) *</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-mono-data text-body-md focus:outline-none focus:bg-surface-container-lowest" placeholder="204.00" required="" step="0.01" type="number"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">GST Slab</label>
+<select class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-mono-data text-body-md focus:outline-none cursor-pointer">
+<option>12% (Standard)</option>
+<option>5% (Life Saving)</option>
+<option>18% (Cosmeceuticals)</option>
+<option>0% (Exempt)</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Max Discount %</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-mono-data text-body-md focus:outline-none focus:bg-surface-container-lowest" placeholder="10%" step="1" type="number" value="10"/>
+</div>
+</div>
+</div>
+<!-- Section 4: Inventory & Reorder Parameters -->
+<div class="space-y-4 pt-3">
+<div class="flex items-center gap-2 pb-1">
+<span class="w-5 h-5 rounded-full bg-primary-container text-on-primary-container font-mono-data text-[11px] flex items-center justify-center font-bold">4</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Inventory Thresholds &amp; Storage Conditions</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Min Reorder Level</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-mono-data text-body-md focus:outline-none focus:bg-surface-container-lowest" placeholder="15" type="number" value="15"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Max Bay Capacity</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-mono-data text-body-md focus:outline-none focus:bg-surface-container-lowest" placeholder="250" type="number" value="250"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Storage Condition</label>
+<select class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none cursor-pointer">
+<option>Room Temp (&lt; 25°C)</option>
+<option>Cold Chain (2°C - 8°C)</option>
+<option>Deep Freeze (-20°C)</option>
+<option>Protected from Light</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Section 5: Initial Batch Inwarding -->
+<div class="space-y-4 pt-3">
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-primary-container text-on-primary-container font-mono-data text-[11px] flex items-center justify-center font-bold">5</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Initial Inwarding Batch Data</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">sync</span> First Inward
+            </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Batch Number *</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-mono-data text-body-md focus:outline-none focus:bg-surface-container-lowest" placeholder="e.g. AG-102" required="" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Opening Stock Quantity</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-mono-data text-body-md focus:outline-none focus:bg-surface-container-lowest" placeholder="e.g. 50" type="number"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Manufacturing Date</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-mono-data text-body-md focus:outline-none focus:bg-surface-container-lowest" type="month" value="2024-05"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Expiry Date *</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-mono-data text-body-md focus:outline-none focus:bg-surface-container-lowest" required="" type="month" value="2026-11"/>
+</div>
+<div class="space-y-1 md:col-span-2">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Primary Distributor / Supplier</label>
+<select class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none cursor-pointer">
+<option>Apollo Health Med Supplies (GSTIN: 29AABCA1234A1Z1)</option>
+<option>MedPlus Wholesale Hub (GSTIN: 29BBBDD4321B1Z2)</option>
+<option>Sun Healthcare Distributors (GSTIN: 29CCCEE9876C1Z3)</option>
+<option>Direct Manufacturer Consignment</option>
+</select>
+</div>
+</div>
+</div>
+</form>
+<!-- Drawer Fixed Actions Footer -->
+<div class="p-4 bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-mono-data text-[12px] text-outline">Form Auto-saved draft</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" id="cancel-drawer-btn" type="button">
+            Cancel
+          </button>
+<button class="flex items-center gap-1.5 px-5 py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md transition-all shadow-md" id="submit-drug-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Save &amp; Register Medicine</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Slide-over Logic & Quick Interaction Scripts -->
+<script>
+    (function initMedicineMaster() {
+      const drawer = document.getElementById('add-medicine-drawer');
+      const openBtn = document.getElementById('open-add-drawer-btn');
+      const closeBtn = document.getElementById('close-drawer-btn');
+      const cancelBtn = document.getElementById('cancel-drawer-btn');
+      const backdrop = document.getElementById('drawer-backdrop');
+      const submitBtn = document.getElementById('submit-drug-btn');
+      const searchInput = document.getElementById('master-search-input');
+
+      function hideDrawer() {
+        if (drawer) {
+          drawer.classList.add('opacity-0', 'pointer-events-none');
+          drawer.classList.remove('opacity-100', 'pointer-events-auto');
+        }
+      }
+
+      function showDrawer() {
+        if (drawer) {
+          drawer.classList.remove('opacity-0', 'pointer-events-none');
+          drawer.classList.add('opacity-100', 'pointer-events-auto');
+        }
+      }
+
+      // Initial state: Keep visible as requested by master prompt to showcase the modal/drawer design,
+      // but wire all buttons for clean interactive toggle UX.
+      if (openBtn) openBtn.addEventListener('click', showDrawer);
+      if (closeBtn) closeBtn.addEventListener('click', hideDrawer);
+      if (cancelBtn) cancelBtn.addEventListener('click', hideDrawer);
+      if (backdrop) backdrop.addEventListener('click', hideDrawer);
+
+      if (submitBtn) {
+        submitBtn.addEventListener('click', function() {
+          const form = document.getElementById('add-medicine-form');
+          if (form) {
+            submitBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">progress_activity</span><span>Registering...</span>';
+            setTimeout(() => {
+              submitBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">check_circle</span><span>Registered Successfully!</span>';
+              setTimeout(() => {
+                hideDrawer();
+                submitBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">verified</span><span>Save & Register Medicine</span>';
+              }, 600);
+            }, 800);
+          }
+        });
+      }
+
+      // Hotkey listeners (Esc to close drawer, F2 for quick search)
+      window.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          hideDrawer();
+        }
+        if (e.key === 'F2') {
+          e.preventDefault();
+          if (searchInput) searchInput.focus();
+        }
+      });
+    })();
+  </script>
+</div></main></div></body></html>

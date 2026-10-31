@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_blank" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "error": "#ba1a1a", "secondary-fixed-dim": "#93ccff", "tertiary": "#006947", "tertiary-container": "#00855b", "on-tertiary": "#ffffff", "secondary-fixed": "#cce5ff", "on-error-container": "#93000a", "primary-container": "#008378", "surface-dim": "#d2d9f4", "on-surface": "#131b2e", "on-primary-fixed-variant": "#005049", "on-primary": "#ffffff", "on-primary-container": "#f4fffc", "inverse-surface": "#283044", "outline": "#6d7a77", "on-tertiary-container": "#f5fff6", "tertiary-fixed-dim": "#4edea3", "on-secondary-container": "#00476e", "outline-variant": "#bcc9c6", "surface-tint": "#006a61", "inverse-on-surface": "#eef0ff", "background": "#faf8ff", "primary": "#00685f", "error-container": "#ffdad6", "on-secondary": "#ffffff", "on-surface-variant": "#3d4947", "on-primary-fixed": "#00201d", "on-secondary-fixed": "#001d31", "surface-container-high": "#e2e7ff", "on-secondary-fixed-variant": "#004b73", "on-tertiary-fixed-variant": "#005236", "surface-variant": "#dae2fd", "surface-bright": "#faf8ff", "secondary": "#006398", "on-error": "#ffffff", "primary-fixed": "#89f5e7", "secondary-container": "#5bb8fe", "surface-container-lowest": "#ffffff", "surface-container-highest": "#dae2fd", "inverse-primary": "#6bd8cb", "on-tertiary-fixed": "#002113", "tertiary-fixed": "#6ffbbe", "on-background": "#131b2e", "primary-fixed-dim": "#6bd8cb", "surface-container-low": "#f2f3ff", "surface-container": "#eaedff", "surface": "#faf8ff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-md": "0.875rem", "gutter": "1.25rem", "space-xs": "0.25rem", "margin": "1.75rem", "space-sm": "0.5rem", "space-xl": "2rem", "margin-sm": "1rem", "space-lg": "1.25rem", "gutter-sm": "0.75rem" }, "fontFamily": { "headline-lg": [ "Inter" ], "label-sm": [ "Inter" ], "headline-lg-mobile": [ "Inter" ], "headline-sm": [ "Inter" ], "body-sm": [ "Inter" ], "body-lg": [ "Inter" ], "label-md": [ "Inter" ], "headline-xl": [ "Inter" ], "body-md": [ "Inter" ], "headline-xl-mobile": [ "Inter" ], "headline-md": [ "Inter" ], "mono-data": [ "Inter" ] }, "fontSize": { "headline-lg": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600" } ], "headline-lg-mobile": [ "22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "headline-sm": [ "16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" } ], "body-sm": [ "13px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" } ], "body-lg": [ "16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" } ], "headline-xl": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" } ], "body-md": [ "14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" } ], "headline-xl-mobile": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-md": [ "20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "mono-data": [ "13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" } ] } } } }</script></head><body class="bg-background font-body-md text-on-surface antialiased"><main class="w-full min-h-screen flex items-center justify-center p-gutter"><div class="flex flex-col w-full max-w-7xl mx-auto py-space-sm sm:py-space-md lg:py-space-xl">
+<!-- Main Dual-Panel Elevation Container (No Outer Borders) -->
+<div class="w-full bg-surface-container-lowest rounded-xl shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 min-h-[720px] transition-all duration-300">
+<!-- LEFT PANEL: Authentication Console (7 cols on Desktop) -->
+<div class="lg:col-span-7 flex flex-col justify-between p-space-lg sm:p-space-xl md:p-margin bg-surface-container-lowest relative z-10">
+<!-- Top Section: Brand & Header -->
+<div class="flex flex-col space-y-space-md">
+<!-- Brand Identity Row -->
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center space-x-3">
+<img alt="PharmaCare Logo" class="h-10 w-10 object-contain rounded-lg shadow-sm" src="https://lh3.googleusercontent.com/aida/AEtjO1VY0ElsKx2pKTdgNPw-gEExinjnXWRq9SEu4jwEj3zAV4ktmrIKqtEtgPKFnEhEqZI_A-CNhosHeu54y4ZhhEI-EJEBYFUtPYQ19OvWSyxOotEFeHd6fuJML0do-sp3tzXDaKkDBiC2_zA_lUpOAjuGgWR6DzINq3wVfOnlhNINatdsb5V6f39jVpQX9MtpDICB-El4Gp4m0EPULnEn_jBST8Tv3tTBEAPyTEsosQluEUP85oEvmgOWJA"/>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">PharmaCare<span class="text-primary font-normal">Rx</span></span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Clinical Dispensary OS</span>
+</div>
+</div>
+<!-- System Status Node -->
+<div class="hidden sm:flex items-center space-x-2 bg-surface-container-low px-3 py-1 rounded-full">
+<span class="inline-block w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-tertiary">NABH Server Active</span>
+</div>
+</div>
+<!-- Headings -->
+<div class="space-y-1">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Welcome Back</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Sign in to manage your pharmacy operations &amp; clinical dispensary portal.</p>
+</div>
+<!-- Role Selector Segmented Controls -->
+<div class="space-y-1.5 pt-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Select Access Role</label>
+<div class="grid grid-cols-3 gap-1.5 p-1 bg-surface-container-low rounded-lg" id="roleSelectorGroup">
+<button class="role-btn py-2 px-2 text-center rounded-md font-label-md text-label-md bg-surface-container-lowest text-primary shadow-sm transition-all flex items-center justify-center space-x-1" id="role-pharmacist" onclick="selectRole('pharmacist')" type="button">
+<span class="material-symbols-outlined text-[17px]">medical_services</span>
+<span class="truncate">Pharmacist</span>
+</button>
+<button class="role-btn py-2 px-2 text-center rounded-md font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all flex items-center justify-center space-x-1" id="role-billing" onclick="selectRole('billing')" type="button">
+<span class="material-symbols-outlined text-[17px]">receipt_long</span>
+<span class="truncate">Billing Staff</span>
+</button>
+<button class="role-btn py-2 px-2 text-center rounded-md font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all flex items-center justify-center space-x-1" id="role-inventory" onclick="selectRole('inventory')" type="button">
+<span class="material-symbols-outlined text-[17px]">inventory_2</span>
+<span class="truncate">Inventory</span>
+</button>
+</div>
+</div>
+<!-- Quick Demo Fill Chips -->
+<div class="flex flex-wrap items-center gap-2 pt-1">
+<span class="font-label-sm text-label-sm text-outline flex items-center">
+<span class="material-symbols-outlined text-sm mr-1">flash_on</span> Demo ID:
+          </span>
+<button class="inline-flex items-center px-2.5 py-1 rounded-full bg-surface-container-high hover:bg-surface-variant text-primary font-mono-data text-label-sm transition-colors cursor-pointer" onclick="quickFill('priya.sharma@pharmacare.in', 'RxShield#2024', 'pharmacist')" type="button">
+            Pharmacist: priya@pharma.in
+          </button>
+<button class="inline-flex items-center px-2.5 py-1 rounded-full bg-surface-container-high hover:bg-surface-variant text-secondary font-mono-data text-label-sm transition-colors cursor-pointer" onclick="quickFill('cashier.dispense@pharmacare.in', 'PosKey#9931', 'billing')" type="button">
+            Staff: cashier@pharma.in
+          </button>
+</div>
+<!-- Authentication Form -->
+<form class="space-y-4 pt-1" id="loginForm" onsubmit="handleAuthSubmit(event)">
+<!-- Email / Dispensary ID Field -->
+<div class="space-y-1">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface" for="authIdentifier">Email or License ID</label>
+<span class="hidden font-label-sm text-label-sm text-tertiary flex items-center space-x-1" id="fieldValidationBadge">
+<span class="material-symbols-outlined text-[14px]">verified</span> Verified Node
+              </span>
+</div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline pointer-events-none text-[20px]">badge</span>
+<input class="w-full h-10 pl-10 pr-4 bg-surface-container-low focus:bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-lg outline-none focus:ring-2 focus:ring-primary/20 focus:shadow-sm transition-all" id="authIdentifier" oninput="checkInputVal()" placeholder="name@pharmacare.in" required="" type="text" value="priya.sharma@pharmacare.in"/>
+</div>
+</div>
+<!-- Password Field with Show/Hide -->
+<div class="space-y-1">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface" for="authPassword">Password</label>
+<a class="font-label-sm text-label-sm text-primary hover:underline cursor-pointer" href="#reset" onclick="event.preventDefault(); triggerNotice('Password recovery link sent to registered phone.');">Forgot Password?</a>
+</div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline pointer-events-none text-[20px]">lock_clock</span>
+<input class="w-full h-10 pl-10 pr-11 bg-surface-container-low focus:bg-surface-container-lowest text-on-surface font-mono-data text-body-md tracking-wider rounded-lg outline-none focus:ring-2 focus:ring-primary/20 focus:shadow-sm transition-all" id="authPassword" placeholder="Enter secure passphrase" required="" type="password" value="••••••••••••"/>
+<button aria-label="Toggle password view" class="absolute right-3 text-outline hover:text-on-surface flex items-center justify-center p-1 rounded transition-colors focus:outline-none" id="togglePasswordBtn" onclick="togglePasswordVisibility()" type="button">
+<span class="material-symbols-outlined text-[20px]" id="passwordIcon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Remember Me Checkbox -->
+<div class="flex items-center justify-between py-1">
+<label class="flex items-center space-x-2.5 cursor-pointer select-none">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary/30 accent-primary cursor-pointer" id="rememberMe" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Keep dispensary terminal authenticated</span>
+</label>
+<div class="flex items-center space-x-1 text-outline">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span class="font-label-sm text-label-sm">8 hr token</span>
+</div>
+</div>
+<!-- Prominent Action Button -->
+<button class="w-full h-11 bg-primary hover:bg-primary-container text-on-primary font-headline-sm text-headline-sm rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center space-x-2 group cursor-pointer relative overflow-hidden" id="submitBtn" type="submit">
+<span class="flex items-center space-x-2" id="btnText">
+<span>Sign In to Portal</span>
+<span class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">arrow_forward</span>
+</span>
+<span class="hidden items-center space-x-2" id="btnSpinner">
+<svg class="animate-spin h-5 w-5 text-on-primary" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+<path class="opacity-75" d="M4 12a8 8 0 018-8v8H4z" fill="currentColor"></path>
+</svg>
+<span>Authenticating Node...</span>
+</span>
+</button>
+</form>
+<!-- Dynamic Micro Alert Toast Box -->
+<div class="hidden p-3 rounded-lg bg-surface-container font-body-sm text-body-sm text-on-surface flex items-center space-x-2 animate-fade-in" id="noticeToast">
+<span class="material-symbols-outlined text-primary text-base">info</span>
+<span id="noticeMessage">Terminal verified.</span>
+</div>
+</div>
+<!-- Footer Compliance Strip -->
+<div class="pt-space-md mt-space-md bg-surface-container-low p-3.5 rounded-lg flex flex-col sm:flex-row items-center justify-between gap-2">
+<div class="flex items-center space-x-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-lg">verified_user</span>
+<span class="font-label-sm text-label-sm">256-Bit SSL Encrypted Healthcare Portal</span>
+</div>
+<div class="flex items-center space-x-2">
+<span class="px-2 py-0.5 rounded font-mono-data text-label-sm bg-surface-container-highest text-secondary font-bold">SCH-X</span>
+<span class="px-2 py-0.5 rounded font-mono-data text-label-sm bg-surface-container-highest text-tertiary font-bold">H1 AUDIT</span>
+</div>
+</div>
+</div>
+<!-- RIGHT PANEL: Healthcare SaaS Highlight & Clinical Live Canvas (5 cols on Desktop) -->
+<div class="lg:col-span-5 bg-gradient-to-br from-surface-container-high via-surface-variant to-secondary-fixed/30 p-space-lg sm:p-space-xl flex flex-col justify-between relative overflow-hidden">
+<!-- Ambient Decorative Geometry -->
+<div class="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-primary-fixed/20 blur-2xl pointer-events-none"></div>
+<div class="absolute bottom-10 -left-10 w-48 h-48 rounded-full bg-secondary-fixed/40 blur-2xl pointer-events-none"></div>
+<!-- Top SaaS Metric Header -->
+<div class="relative z-10 space-y-space-md">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-surface-container-lowest shadow-sm text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] mr-1.5" style="font-variation-settings: 'FILL' 1;">health_and_safety</span>
+            Enterprise Clinical Core
+          </span>
+<span class="font-mono-data text-label-sm text-outline">v4.8.2-cloud</span>
+</div>
+<div class="space-y-1">
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">Real-Time Dispensary Telemetry</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Continuous reconciliation of Schedule drug quotas and automated GST e-way generation.</p>
+</div>
+<!-- Metric Highlight Badge Card -->
+<div class="bg-surface-container-lowest/90 backdrop-blur-md p-4 rounded-xl shadow-md space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Dispensary Performance</span>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold flex items-center">
+<span class="material-symbols-outlined text-[13px] mr-1">trending_up</span> Live
+            </span>
+</div>
+<div class="grid grid-cols-2 gap-3 pt-1">
+<div class="p-2.5 bg-surface-container-low rounded-lg">
+<div class="font-headline-md text-headline-md text-primary font-bold">99.98%</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Batch Accuracy</div>
+</div>
+<div class="p-2.5 bg-surface-container-low rounded-lg">
+<div class="font-headline-md text-headline-md text-secondary font-bold">14,200+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Daily Prescriptions</div>
+</div>
+</div>
+<!-- Mini Inline Bar / Sparkline Visualization -->
+<div class="pt-1">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant mb-1">
+<span>Dispensary Throughput (Peak Shift)</span>
+<span class="font-mono-data font-semibold text-tertiary">94.2%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden flex">
+<div class="bg-primary h-full rounded-full transition-all duration-1000" style="width: 72%"></div>
+<div class="bg-secondary-container h-full rounded-full transition-all duration-1000" style="width: 22%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Mid-Right Context Image Showcase with Gradient Scrim -->
+<div class="relative z-10 my-space-md rounded-xl overflow-hidden shadow-lg bg-surface-container-lowest group">
+<div class="w-full h-44 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="A clean, state-of-the-art modern clinical pharmacy dispensing counter in India with automated medication carousel, organized barcode scanner terminals, cold-chain medicine refrigeration unit, and soft natural daylight reflecting off sterile teal surfaces." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDyWTdxyMmXPGoi1x2HV9zMeTyCecwjlXjUP-ybCYKYsugFPMBFbrcoqbLUpL9KYfqzOYxPdQZsF6Yx22WRQKWO34ReRJywFWUeKSqVnXgMo6JI2h0uMF4g1El6WtLgOFrs6U_35Qm1CWTgtcn46Y-LA2_N81fQFx1Y3_dxmIVXtqZJAuVwHlf1DLtE8T11rYfFsGW_CRBJK2JG66MhLcoc8k3AVEylQkNkqzdaTMZcgijwondwOXXR')">
+<div class="w-full h-full bg-gradient-to-t from-on-surface/90 via-on-surface/40 to-transparent flex flex-col justify-end p-4">
+<div class="flex items-center space-x-2 text-surface">
+<span class="material-symbols-outlined text-primary-fixed text-lg">local_pharmacy</span>
+<span class="font-headline-sm text-headline-sm text-surface font-bold">Central Pharmacy Hub 04</span>
+</div>
+<p class="font-body-sm text-body-sm text-surface-variant/90 line-clamp-1">Max Super Specialty Hospital dispensary grid network</p>
+</div>
+</div>
+</div>
+<!-- Bottom Card: Pharmacist Active Session Security & Instant Cloud Backup -->
+<div class="relative z-10 bg-surface-container-lowest/95 backdrop-blur-md p-4 rounded-xl shadow-md space-y-3">
+<div class="flex items-center space-x-3">
+<div class="relative">
+<img class="w-11 h-11 rounded-full object-cover shadow-sm" data-alt="Professional portrait of Dr. Priya Sharma, senior chief pharmacist wearing a clean white clinical coat and a lanyard ID badge, smiling confidently in front of high-tech pharmacy shelving units." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA10xM79P8kbhOnzi2fB0ifaVjp4bvCO27tGU4pYpreACoSt9ru39V4i3EKk7GQ5zt5EMK7BpHeGrMjScXtDxqZeDADj0yqhL7HPXMvfKt3q09Nqtx6a0wN_pfjnlZQ37i3L0gateOLaJS_XRTf3DA7ei1uDfRopVFVOGNd7S8sQg-yUwwOgPq0IyYzS_VkeJ3Ndu6jh4GgPg_JwV67lBT-uPZxJm5fiY4asIdFkAsnWCj6feAajrOf"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-tertiary shadow-sm"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-body-lg text-on-surface font-bold truncate">Dr. Priya Sharma, M.Pharm</h3>
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm">Chief Dispenser</span>
+</div>
+<p class="font-mono-data text-label-sm text-outline truncate">MCI-REG #4492-MH • Session: #SEC-9812</p>
+</div>
+</div>
+<div class="pt-2 flex items-center justify-between bg-surface-container-low px-3 py-2 rounded-lg">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-secondary text-lg animate-spin" style="animation-duration: 6s;">cloud_sync</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Instant Cloud Backup</span>
+<span class="font-label-sm text-label-sm text-outline">Sync interval: 300ms</span>
+</div>
+</div>
+<span class="flex items-center text-tertiary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-sm mr-1">check_circle</span> Protected
+          </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom System Micro Nav / Help Hub -->
+<div class="mt-space-md flex flex-col sm:flex-row items-center justify-between text-outline text-label-sm font-label-sm px-2 gap-2">
+<div class="flex items-center space-x-4">
+<span>Terms of Clinical Practice</span>
+<span>•</span>
+<span>Drug Formulary Protocol 2025</span>
+<span>•</span>
+<span>CDSCO Compliance</span>
+</div>
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-sm text-primary">support_agent</span>
+<span>Dispensary Tech Support: 1800-419-7427 (24x7)</span>
+</div>
+</div>
+</div>
+<script>
+  function selectRole(role) {
+    const roles = ['pharmacist', 'billing', 'inventory'];
+    roles.forEach(r => {
+      const btn = document.getElementById('role-' + r);
+      if (r === role) {
+        btn.className = 'role-btn py-2 px-2 text-center rounded-md font-label-md text-label-md bg-surface-container-lowest text-primary shadow-sm transition-all flex items-center justify-center space-x-1';
+      } else {
+        btn.className = 'role-btn py-2 px-2 text-center rounded-md font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all flex items-center justify-center space-x-1';
+      }
+    });
+
+    if (role === 'pharmacist') {
+      document.getElementById('authIdentifier').value = 'priya.sharma@pharmacare.in';
+    } else if (role === 'billing') {
+      document.getElementById('authIdentifier').value = 'cashier.dispense@pharmacare.in';
+    } else if (role === 'inventory') {
+      document.getElementById('authIdentifier').value = 'warehouse.lead@pharmacare.in';
+    }
+    checkInputVal();
+  }
+
+  function quickFill(user, pass, role) {
+    selectRole(role);
+    document.getElementById('authIdentifier').value = user;
+    const passInput = document.getElementById('authPassword');
+    passInput.value = pass;
+    passInput.type = 'text';
+    document.getElementById('passwordIcon').textContent = 'visibility_off';
+    checkInputVal();
+    triggerNotice('Loaded ' + role + ' test credentials.');
+  }
+
+  function togglePasswordVisibility() {
+    const passInput = document.getElementById('authPassword');
+    const icon = document.getElementById('passwordIcon');
+    if (passInput.type === 'password') {
+      passInput.type = 'text';
+      icon.textContent = 'visibility_off';
+    } else {
+      passInput.type = 'password';
+      icon.textContent = 'visibility';
+    }
+  }
+
+  function checkInputVal() {
+    const val = document.getElementById('authIdentifier').value;
+    const badge = document.getElementById('fieldValidationBadge');
+    if (val.includes('@') && val.includes('.')) {
+      badge.classList.remove('hidden');
+    } else {
+      badge.classList.add('hidden');
+    }
+  }
+
+  function triggerNotice(msg) {
+    const toast = document.getElementById('noticeToast');
+    const msgEl = document.getElementById('noticeMessage');
+    msgEl.textContent = msg;
+    toast.classList.remove('hidden');
+    setTimeout(() => {
+      toast.classList.add('hidden');
+    }, 4000);
+  }
+
+  function handleAuthSubmit(e) {
+    e.preventDefault();
+    const btnText = document.getElementById('btnText');
+    const btnSpinner = document.getElementById('btnSpinner');
+    const submitBtn = document.getElementById('submitBtn');
+
+    btnText.classList.add('hidden');
+    btnSpinner.classList.remove('hidden');
+    btnSpinner.classList.add('flex');
+    submitBtn.disabled = true;
+
+    setTimeout(() => {
+      btnSpinner.classList.remove('flex');
+      btnSpinner.classList.add('hidden');
+      btnText.classList.remove('hidden');
+      submitBtn.disabled = false;
+      triggerNotice('Credentials verified. Redirecting to clinical workspace...');
+    }, 1200);
+  }
+
+  // Initial check
+  checkInputVal();
+</script></main></body></html>

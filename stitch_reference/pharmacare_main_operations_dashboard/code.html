@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "error": "#ba1a1a", "secondary-fixed-dim": "#93ccff", "tertiary": "#006947", "tertiary-container": "#00855b", "on-tertiary": "#ffffff", "secondary-fixed": "#cce5ff", "on-error-container": "#93000a", "primary-container": "#008378", "surface-dim": "#d2d9f4", "on-surface": "#131b2e", "on-primary-fixed-variant": "#005049", "on-primary": "#ffffff", "on-primary-container": "#f4fffc", "inverse-surface": "#283044", "outline": "#6d7a77", "on-tertiary-container": "#f5fff6", "tertiary-fixed-dim": "#4edea3", "on-secondary-container": "#00476e", "outline-variant": "#bcc9c6", "surface-tint": "#006a61", "inverse-on-surface": "#eef0ff", "background": "#faf8ff", "primary": "#00685f", "error-container": "#ffdad6", "on-secondary": "#ffffff", "on-surface-variant": "#3d4947", "on-primary-fixed": "#00201d", "on-secondary-fixed": "#001d31", "surface-container-high": "#e2e7ff", "on-secondary-fixed-variant": "#004b73", "on-tertiary-fixed-variant": "#005236", "surface-variant": "#dae2fd", "surface-bright": "#faf8ff", "secondary": "#006398", "on-error": "#ffffff", "primary-fixed": "#89f5e7", "secondary-container": "#5bb8fe", "surface-container-lowest": "#ffffff", "surface-container-highest": "#dae2fd", "inverse-primary": "#6bd8cb", "on-tertiary-fixed": "#002113", "tertiary-fixed": "#6ffbbe", "on-background": "#131b2e", "primary-fixed-dim": "#6bd8cb", "surface-container-low": "#f2f3ff", "surface-container": "#eaedff", "surface": "#faf8ff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-md": "0.875rem", "gutter": "1.25rem", "space-xs": "0.25rem", "margin": "1.75rem", "space-sm": "0.5rem", "space-xl": "2rem", "margin-sm": "1rem", "space-lg": "1.25rem", "gutter-sm": "0.75rem" }, "fontFamily": { "headline-lg": [ "Inter" ], "label-sm": [ "Inter" ], "headline-lg-mobile": [ "Inter" ], "headline-sm": [ "Inter" ], "body-sm": [ "Inter" ], "body-lg": [ "Inter" ], "label-md": [ "Inter" ], "headline-xl": [ "Inter" ], "body-md": [ "Inter" ], "headline-xl-mobile": [ "Inter" ], "headline-md": [ "Inter" ], "mono-data": [ "Inter" ] }, "fontSize": { "headline-lg": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600" } ], "headline-lg-mobile": [ "22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "headline-sm": [ "16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" } ], "body-sm": [ "13px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" } ], "body-lg": [ "16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" } ], "headline-xl": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" } ], "body-md": [ "14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" } ], "headline-xl-mobile": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-md": [ "20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "mono-data": [ "13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" } ] } } } }</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col h-full"><div class="h-16 px-space-lg flex items-center justify-between bg-surface-container-low/40"><div class="flex items-center gap-space-sm"><img alt="PharmaCare Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VY0ElsKx2pKTdgNPw-gEExinjnXWRq9SEu4jwEj3zAV4ktmrIKqtEtgPKFnEhEqZI_A-CNhosHeu54y4ZhhEI-EJEBYFUtPYQ19OvWSyxOotEFeHd6fuJML0do-sp3tzXDaKkDBiC2_zA_lUpOAjuGgWR6DzINq3wVfOnlhNINatdsb5V6f39jVpQX9MtpDICB-El4Gp4m0EPULnEn_jBST8Tv3tTBEAPyTEsosQluEUP85oEvmgOWJA"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold leading-tight">PharmaCare</span><span class="font-label-sm text-label-sm text-outline tracking-wider uppercase">PMS Enterprise v2.4</span></div></div><span class="px-space-xs py-0.5 rounded bg-primary-container/20 text-primary font-label-sm text-label-sm">HQ-BLR</span></div><div class="flex-1 overflow-y-auto px-space-md py-space-md space-y-space-md"><div class="space-y-1"><div class="px-space-sm py-1 font-label-sm text-label-sm text-outline font-semibold tracking-wider uppercase">Main Operations</div><nav class="space-y-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm"><a aria-current="page" class="flex items-center gap-space-md px-space-md py-2.5 transition-all bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Dashboard</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="sales-pos-billing" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span>Sales &amp; POS Billing</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="medicines" href="#"><span class="material-symbols-outlined text-[20px]">medication</span><span>Medicines</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="inventory" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span>Inventory</span></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="batches-expiry" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">warning</span><span>Batches &amp; Expiry</span></div><span class="px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-mono-data text-[11px] font-semibold">12</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="prescriptions" href="#"><span class="material-symbols-outlined text-[20px]">prescriptions</span><span>Prescriptions</span></a></nav></div><div class="space-y-1"><div class="px-space-sm py-1 font-label-sm text-label-sm text-outline font-semibold tracking-wider uppercase">Management</div><nav class="space-y-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm"><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="suppliers" href="#"><span class="material-symbols-outlined text-[20px]">local_shipping</span><span>Suppliers</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="customers" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span>Customers</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="purchase-orders" href="#"><span class="material-symbols-outlined text-[20px]">note_add</span><span>Purchase Orders</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="reports-analytics" href="#"><span class="material-symbols-outlined text-[20px]">monitoring</span><span>Reports &amp; Analytics</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="staff-roles" href="#"><span class="material-symbols-outlined text-[20px]">admin_panel_settings</span><span>Staff &amp; Roles</span></a></nav></div><div class="space-y-1"><div class="px-space-sm py-1 font-label-sm text-label-sm text-outline font-semibold tracking-wider uppercase">System</div><nav class="space-y-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm"><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="notifications" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">notifications</span><span>Notifications</span></div><span class="px-1.5 py-0.5 rounded-full bg-error text-on-error font-mono-data text-[11px] font-semibold">4</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-error hover:bg-error-container hover:text-on-error-container transition-all font-body-md text-body-md" data-path="login" href="#"><span class="material-symbols-outlined text-[20px]">logout</span><span>Logout</span></a></nav></div></div><div class="p-space-md m-space-md rounded-xl bg-surface-container flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-2.5 h-2.5 rounded-full bg-tertiary"></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-semibold">GSTIN Verified</span><span class="font-mono-data text-[11px] text-outline">29AAAAA0000A1Z5</span></div></div><span class="material-symbols-outlined text-outline text-[18px]">verified</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter"><div class="flex items-center gap-gutter flex-1 max-w-2xl"><div class="relative w-full max-w-md"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span><input class="w-full pl-10 pr-20 py-2 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-colors" placeholder="Search medicines, batches, customers, invoices..." type="text"/><div class="absolute right-2.5 top-1/2 -translate-y-1/2 flex items-center gap-1"><kbd class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono-data text-[10px] font-semibold">Ctrl</kbd><kbd class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono-data text-[10px] font-semibold">K</kbd></div></div><div class="hidden xl:flex items-center gap-space-xs text-on-surface-variant font-mono-data text-mono-data bg-surface-container-low px-3 py-1.5 rounded-lg"><span class="material-symbols-outlined text-[16px] text-tertiary">schedule</span><span>Thursday, 24 Oct 2024</span><span class="text-outline">•</span><span class="font-semibold text-primary">IST</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm"><button class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[18px]">point_of_sale</span><span>+ Quick Sale (POS)</span></button><button class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-lowest text-primary hover:bg-surface-container-low font-label-md text-label-md transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[18px]">add_circle</span><span>+ Add Medicine</span></button></div><div class="h-6 w-px bg-surface-container-high mx-1"></div><div class="relative"><button aria-label="Notifications" class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors relative" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></button></div><div class="h-6 w-px bg-surface-container-high mx-1"></div><div class="flex items-center gap-space-sm cursor-pointer hover:bg-surface-container-low p-1.5 rounded-xl transition-colors"><div class="relative"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYgQerTH4T1nMqbS87Kh8eor4E4yhOvEm5ABJN0bcQ-HkVZVoTklHM_S3C4a-RbNgKQ3fOogjrT-x35cLYilldrUeP6TyFECBOzUvpUBdbaB6TK4yiiyk6cz-XsdCJPAdF9PHk6lKa9n77vMb8sHCrNLweQdtCy5tRijgcYZNiiDMyBrvhRJ05JlxbJU2ig-5v-955mbTbIy-ZIxfQFc15PoOIAG1V23brzL4qaGlkp-jn705h6QmZ"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-tertiary ring-2 ring-surface-container-lowest"></span></div><div class="hidden md:flex flex-col text-left"><div class="flex items-center gap-1.5"><span class="font-label-md text-label-md text-on-surface font-semibold leading-none">Dr. Priya Sharma</span><span class="px-1.5 py-0.2 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-[10px] font-bold uppercase">Admin</span></div><span class="font-label-sm text-label-sm text-outline leading-tight mt-0.5">Chief Pharmacist • Reg #64821</span></div><span class="material-symbols-outlined text-outline text-[18px]">expand_more</span></div></div></header><main class="relative pt-16 bg-background w-full min-h-screen px-gutter py-margin"><div class="flex flex-col w-full">
+<!-- Operational Executive Top Bar & Greeting Banner -->
+<section class="relative overflow-hidden rounded-xl bg-surface-container-lowest p-space-lg shadow-sm mb-space-lg">
+<div class="absolute -right-16 -top-24 w-80 h-80 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+<div class="absolute right-48 -bottom-20 w-64 h-64 rounded-full bg-secondary-container/20 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col xl:flex-row xl:items-center xl:justify-between gap-space-lg">
+<div class="space-y-1.5">
+<div class="flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-tertiary/10 text-tertiary font-label-sm text-label-sm font-semibold tracking-wide uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+            Store Status: Open
+          </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-mono-data text-[11px]">
+<span class="material-symbols-outlined text-[14px] text-primary">schedule</span>
+            Shift: Morning (08:00 - 16:00)
+          </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-mono-data text-[11px]">
+<span class="material-symbols-outlined text-[14px] text-secondary">point_of_sale</span>
+            POS Terminal #2 Active
+          </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">
+          Welcome back, Dr. Priya Sharma <span class="inline-block transform hover:rotate-12 transition-transform cursor-default">👋</span>
+</h1>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline">domain</span>
+<span>Apollo Pharmacy Branch #104, 100ft Road, Indiranagar, Bengaluru</span>
+<span class="text-outline">•</span>
+<span class="text-primary font-medium">Real-time dispensary telemetry active</span>
+</p>
+</div>
+<!-- Date Period Selector Pills & Quick Export -->
+<div class="flex flex-wrap items-center gap-space-sm pt-2 xl:pt-0">
+<div class="bg-surface-container-low p-1 rounded-xl flex items-center shadow-inner">
+<button class="date-filter active px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm transition-all" type="button">Today</button>
+<button class="date-filter px-3.5 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all" type="button">Yesterday</button>
+<button class="date-filter px-3.5 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all" type="button">Last 7 Days</button>
+<button class="date-filter px-3.5 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all" type="button">This Month</button>
+<button class="date-filter flex items-center gap-1 px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span>Custom</span>
+</button>
+</div>
+<button class="p-2.5 rounded-xl bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors shadow-sm" onclick="window.print()" title="Print Executive Summary" type="button">
+<span class="material-symbols-outlined text-[20px]">print</span>
+</button>
+</div>
+</div>
+</section>
+<!-- KPI Matrix (Primary 4 Sales & Financials + Secondary 4 Expiry & Clinical Supply) -->
+<section class="space-y-space-md mb-space-lg">
+<!-- Row 1: Core Financials & Stock Totals -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-gutter">
+<!-- Card 1: Today Sales -->
+<div class="relative bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all group overflow-hidden">
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-semibold">Today's Gross Sales</span>
+<div class="w-8 h-8 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2 mb-2">
+<span class="font-headline-xl text-headline-xl font-bold tracking-tight text-on-surface">₹84,350<span class="font-headline-sm text-headline-sm text-on-surface-variant font-normal">.00</span></span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1 text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>+14.2%</span>
+<span class="text-on-surface-variant font-normal">vs y'day</span>
+</div>
+<!-- Sparkline SVG -->
+<svg class="w-20 h-6 text-tertiary" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 80 24">
+<path d="M2 18 L16 14 L30 19 L44 9 L58 13 L72 3 L78 6"></path>
+</svg>
+</div>
+</div>
+<!-- Card 2: Today Profit -->
+<div class="relative bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all group">
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-semibold">Net Gross Margin</span>
+<div class="w-8 h-8 rounded-lg bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2 mb-2">
+<span class="font-headline-xl text-headline-xl font-bold tracking-tight text-on-surface">₹22,480<span class="font-headline-sm text-headline-sm text-on-surface-variant font-normal">.00</span></span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1 text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="px-1.5 py-0.5 rounded bg-tertiary/10 text-tertiary">26.6% Margin</span>
+</div>
+<span class="font-mono-data text-mono-data text-on-surface-variant">Avg ₹412 / bill</span>
+</div>
+</div>
+<!-- Card 3: Total Medicines In Stock -->
+<div class="relative bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all group">
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-semibold">Medicines in Stock</span>
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed/50 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">medication</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2 mb-2">
+<span class="font-headline-xl text-headline-xl font-bold tracking-tight text-on-surface">1,842</span>
+<span class="font-headline-sm text-headline-sm text-outline font-medium">SKUs</span>
+</div>
+<div class="flex items-center justify-between pt-1 font-body-sm text-body-sm text-on-surface-variant">
+<span>Categorized in <strong class="text-on-surface font-semibold">64 groups</strong></span>
+<span class="flex items-center text-tertiary font-mono-data text-mono-data"><span class="w-2 h-2 rounded-full bg-tertiary inline-block mr-1"></span>98.4% Fill</span>
+</div>
+</div>
+<!-- Card 4: Inventory MRP Valuation -->
+<div class="relative bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all group">
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-semibold">Inventory Valuation</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[20px]">inventory</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2 mb-2">
+<span class="font-headline-xl text-headline-xl font-bold tracking-tight text-on-surface">₹14.85<span class="font-headline-sm text-headline-sm text-on-surface-variant font-normal"> Lakh</span></span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-outline">At Cumulative MRP</span>
+<span class="font-mono-data text-mono-data text-on-surface-variant font-medium">Cost: ₹10.92L</span>
+</div>
+</div>
+</div>
+<!-- Row 2: Secondary Operational Triage & Critical Alerts -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-gutter">
+<!-- 5. Low Stock Alert -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div class="space-y-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-outline uppercase font-semibold">Low Stock Alert</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">12 Items</span>
+<span class="font-label-sm text-label-sm text-error font-medium">Below Min Safety</span>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface hover:bg-secondary-fixed text-label-md font-label-md font-semibold transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">autorenew</span>
+<span>Restock</span>
+</button>
+</div>
+<!-- 6. Expiring Soon (30 Days) -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div class="space-y-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span>
+<span class="font-label-sm text-label-sm text-outline uppercase font-semibold">Expiring &lt; 30 Days</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">7 Batches</span>
+<span class="font-label-sm text-label-sm text-outline">₹18,400 val</span>
+</div>
+</div>
+<a class="px-3 py-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-surface-container-high text-label-md font-label-md font-semibold transition-colors flex items-center gap-1" data-path="batches-expiry" href="#">
+<span>Review</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- 7. Critical Expired Batches -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div class="space-y-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-label-sm text-label-sm text-error uppercase font-semibold">Critical Expired</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-md text-headline-md font-bold text-error">3 Batches</span>
+<span class="font-label-sm text-label-sm text-error">Immediate Halt</span>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-error text-on-error hover:opacity-90 text-label-md font-label-md font-semibold transition-opacity flex items-center gap-1 shadow-sm" onclick="openQuarantineModal()" type="button">
+<span class="material-symbols-outlined text-[16px]">lock_clock</span>
+<span>Quarantine</span>
+</button>
+</div>
+<!-- 8. Pending Purchase Orders -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div class="space-y-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-outline uppercase font-semibold">Pending PO Delivery</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">5 Orders</span>
+<span class="font-mono-data text-mono-data text-outline font-semibold">₹1,42,000</span>
+</div>
+</div>
+<a class="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" data-path="purchase-orders" href="#" title="View Inbound POs">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Interactive Data & Visual Analytics Section (2-Column Bento) -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter mb-space-lg">
+<!-- Left Chart: Weekly Sales & Revenue Breakdown -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-6">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">bar_chart</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Weekly Sales &amp; Revenue Overview</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Daily volume with Saturday retail peak at ₹1,12,000</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-3 h-3 rounded-sm bg-primary"></span>
+<span>Prescription</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-3 h-3 rounded-sm bg-secondary-container"></span>
+<span>OTC / Wellness</span>
+</div>
+</div>
+</div>
+<!-- SVG Bar Chart with Peak Indicator -->
+<div class="relative w-full pt-4">
+<svg class="w-full h-56 text-outline-variant overflow-visible" fill="none" viewbox="0 0 680 240">
+<!-- Horizontal Grid Lines -->
+<line opacity="0.3" stroke="currentColor" stroke-dasharray="3 3" x1="40" x2="660" y1="20" y2="20"></line>
+<line opacity="0.3" stroke="currentColor" stroke-dasharray="3 3" x1="40" x2="660" y1="70" y2="70"></line>
+<line opacity="0.3" stroke="currentColor" stroke-dasharray="3 3" x1="40" x2="660" y1="120" y2="120"></line>
+<line opacity="0.3" stroke="currentColor" stroke-dasharray="3 3" x1="40" x2="660" y1="170" y2="170"></line>
+<line opacity="0.6" stroke="currentColor" x1="40" x2="660" y1="210" y2="210"></line>
+<!-- Y-Axis Labels -->
+<text fill="#6d7a77" font-family="Inter" font-size="11" text-anchor="end" x="32" y="24">₹1.2L</text>
+<text fill="#6d7a77" font-family="Inter" font-size="11" text-anchor="end" x="32" y="74">₹90k</text>
+<text fill="#6d7a77" font-family="Inter" font-size="11" text-anchor="end" x="32" y="124">₹60k</text>
+<text fill="#6d7a77" font-family="Inter" font-size="11" text-anchor="end" x="32" y="174">₹30k</text>
+<!-- Day 1: Mon (Total ₹68,000) -->
+<g class="cursor-pointer group">
+<rect class="group-hover:fill-primary-container transition-colors" fill="#00685f" height="80" rx="4" width="34" x="75" y="130"></rect>
+<rect fill="#5bb8fe" height="28" rx="4" width="34" x="75" y="100"></rect>
+<text fill="#3d4947" font-family="Inter" font-size="11" font-weight="500" text-anchor="middle" x="92" y="228">Mon</text>
+</g>
+<!-- Day 2: Tue (Total ₹74,500) -->
+<g class="cursor-pointer group">
+<rect class="group-hover:fill-primary-container transition-colors" fill="#00685f" height="95" rx="4" width="34" x="155" y="115"></rect>
+<rect fill="#5bb8fe" height="25" rx="4" width="34" x="155" y="88"></rect>
+<text fill="#3d4947" font-family="Inter" font-size="11" font-weight="500" text-anchor="middle" x="172" y="228">Tue</text>
+</g>
+<!-- Day 3: Wed (Total ₹61,200) -->
+<g class="cursor-pointer group">
+<rect class="group-hover:fill-primary-container transition-colors" fill="#00685f" height="72" rx="4" width="34" x="235" y="138"></rect>
+<rect fill="#5bb8fe" height="24" rx="4" width="34" x="235" y="112"></rect>
+<text fill="#3d4947" font-family="Inter" font-size="11" font-weight="500" text-anchor="middle" x="252" y="228">Wed</text>
+</g>
+<!-- Day 4: Thu - Today (Total ₹84,350) -->
+<g class="cursor-pointer group">
+<rect class="group-hover:fill-primary-container transition-colors" fill="#00685f" height="115" rx="4" width="34" x="315" y="95"></rect>
+<rect fill="#5bb8fe" height="28" rx="4" width="34" x="315" y="65"></rect>
+<text fill="#00685f" font-family="Inter" font-size="11" font-weight="700" text-anchor="middle" x="332" y="228">Thu (Today)</text>
+<!-- Badge on Today -->
+<rect fill="#00685f" height="18" rx="4" width="52" x="306" y="38"></rect>
+<text fill="#ffffff" font-family="Inter" font-size="10" font-weight="600" text-anchor="middle" x="332" y="51">₹84.3k</text>
+</g>
+<!-- Day 5: Fri (Total ₹89,000) -->
+<g class="cursor-pointer group">
+<rect class="group-hover:fill-primary-container transition-colors" fill="#00685f" height="125" rx="4" width="34" x="395" y="85"></rect>
+<rect fill="#5bb8fe" height="25" rx="4" width="34" x="395" y="58"></rect>
+<text fill="#3d4947" font-family="Inter" font-size="11" font-weight="500" text-anchor="middle" x="412" y="228">Fri</text>
+</g>
+<!-- Day 6: Sat - Peak (Total ₹1,12,000) -->
+<g class="cursor-pointer group">
+<rect class="group-hover:fill-primary-container transition-colors" fill="#00685f" height="150" rx="4" width="34" x="475" y="60"></rect>
+<rect fill="#5bb8fe" height="34" rx="4" width="34" x="475" y="24"></rect>
+<text fill="#3d4947" font-family="Inter" font-size="11" font-weight="600" text-anchor="middle" x="492" y="228">Sat</text>
+<!-- Peak Indicator Pin -->
+<circle cx="492" cy="14" fill="#00855b" r="3"></circle>
+<text fill="#00855b" font-family="Inter" font-size="10" font-weight="700" text-anchor="middle" x="492" y="8">Peak ₹1.12L</text>
+</g>
+<!-- Day 7: Sun (Total ₹96,400) -->
+<g class="cursor-pointer group">
+<rect class="group-hover:fill-primary-container transition-colors" fill="#00685f" height="135" rx="4" width="34" x="555" y="75"></rect>
+<rect fill="#5bb8fe" height="25" rx="4" width="34" x="555" y="48"></rect>
+<text fill="#3d4947" font-family="Inter" font-size="11" font-weight="500" text-anchor="middle" x="572" y="228">Sun</text>
+</g>
+</svg>
+</div>
+<div class="mt-4 pt-3 flex flex-wrap items-center justify-between text-on-surface-variant font-mono-data text-mono-data bg-surface-container-low px-space-md py-2 rounded-lg">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-tertiary text-[18px]">verified</span> 7-Day Cumulative: <strong class="text-on-surface">₹5,85,450.00</strong></span>
+<span class="text-outline">GST Collected: ₹52,690.50</span>
+</div>
+</div>
+<!-- Right Chart: Category & Drug Schedule Distribution -->
+<div class="lg:col-span-5 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-4">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Sales by Category &amp; Drug Schedule</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Therapeutic segmentation breakdown</p>
+</div>
+<span class="material-symbols-outlined text-outline">pie_chart</span>
+</div>
+<!-- Doughnut Chart Layout -->
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6 my-auto py-2">
+<!-- SVG Donut Chart with Inner Metric -->
+<div class="relative w-44 h-44 flex-shrink-0">
+<svg class="w-full h-full -rotate-90 transform" viewbox="0 0 100 100">
+<!-- Background track -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#eaedff" stroke-width="16"></circle>
+<!-- Segment 1: Antibiotics (28%) = 66.85 -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#00685f" stroke-dasharray="66.85 238.76" stroke-dashoffset="0" stroke-width="16"></circle>
+<!-- Segment 2: Chronic & Cardiac (24%) = 57.30 -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#006398" stroke-dasharray="57.30 238.76" stroke-dashoffset="-66.85" stroke-width="16"></circle>
+<!-- Segment 3: Analgesics & Pain (18%) = 42.97 -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#00855b" stroke-dasharray="42.97 238.76" stroke-dashoffset="-124.15" stroke-width="16"></circle>
+<!-- Segment 4: Vitamins & Supps (16%) = 38.20 -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#5bb8fe" stroke-dasharray="38.20 238.76" stroke-dashoffset="-167.12" stroke-width="16"></circle>
+<!-- Segment 5: OTC & Wellness (14%) = 33.42 -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#6bd8cb" stroke-dasharray="33.42 238.76" stroke-dashoffset="-205.32" stroke-width="16"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹84.3k</span>
+<span class="font-label-sm text-[10px] text-outline uppercase tracking-wider">Today</span>
+</div>
+</div>
+<!-- Legend Column -->
+<div class="space-y-2 w-full max-w-xs">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-primary"></span>Antibiotics (Schedule H)</span>
+<span class="font-mono-data font-semibold text-on-surface">28%</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-secondary"></span>Chronic &amp; Cardiac</span>
+<span class="font-mono-data font-semibold text-on-surface">24%</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-tertiary-container"></span>Analgesics &amp; Pain</span>
+<span class="font-mono-data font-semibold text-on-surface">18%</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-secondary-container"></span>Vitamins &amp; Supps</span>
+<span class="font-mono-data font-semibold text-on-surface">16%</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-primary-fixed-dim"></span>OTC &amp; Wellness</span>
+<span class="font-mono-data font-semibold text-on-surface">14%</span>
+</div>
+</div>
+</div>
+<!-- Compliance alert bar -->
+<div class="p-2.5 rounded-lg bg-surface-container flex items-center justify-between mt-2">
+<div class="flex items-center gap-2 text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+<span>Schedule H1 Strict Register: <strong>18 bills logged</strong></span>
+</div>
+<button class="text-primary hover:underline font-label-sm text-label-sm font-semibold" type="button">View Log</button>
+</div>
+</div>
+</section>
+<!-- Actionable Operational Split Section -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter mb-space-lg">
+<!-- Left Column: Recent POS Sales & Dispensed Bills (7 Cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pb-4">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">receipt_long</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Recent POS Sales &amp; Dispensed Bills</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Live feed of transactions generated at dispensary counters</p>
+</div>
+<a class="inline-flex items-center gap-1 text-primary hover:text-primary-container font-label-md text-label-md font-semibold self-start sm:self-auto" data-path="sales-pos-billing" href="#">
+<span>View POS Register</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+<!-- High-density Data Table without borders -->
+<div class="overflow-x-auto -mx-space-lg px-space-lg">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-2.5 px-3 rounded-l-lg">Bill ID</th>
+<th class="py-2.5 px-3">Patient / Doctor</th>
+<th class="py-2.5 px-3">Items</th>
+<th class="py-2.5 px-3 text-right">Amount (₹)</th>
+<th class="py-2.5 px-3">Mode</th>
+<th class="py-2.5 px-3 text-center rounded-r-lg">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-3 px-3">
+<div class="font-mono-data text-mono-data font-semibold text-primary">#BLR-8921</div>
+<div class="text-[11px] text-outline">15:42 IST</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-semibold text-on-surface">Rajesh Kumar, 54M</div>
+<div class="text-[11px] text-outline">Dr. B. K. Rao (Cardio)</div>
+</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono-data text-[11px]">4 medicines</span>
+</td>
+<td class="py-3 px-3 text-right font-mono-data font-bold text-on-surface">
+                ₹1,450.00
+              </td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant text-[11px] font-semibold">
+<span class="material-symbols-outlined text-[12px]">qr_code_2</span> UPI
+                </span>
+</td>
+<td class="py-3 px-3 text-center">
+<button class="p-1.5 rounded-lg text-outline hover:text-primary hover:bg-surface-container transition-colors" title="Print Tax Invoice" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-3 px-3">
+<div class="font-mono-data text-mono-data font-semibold text-primary">#BLR-8920</div>
+<div class="text-[11px] text-outline">15:31 IST</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-semibold text-on-surface">Sunita Venkatesh, 32F</div>
+<div class="text-[11px] text-outline">Walk-in OTC</div>
+</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono-data text-[11px]">2 items</span>
+</td>
+<td class="py-3 px-3 text-right font-mono-data font-bold text-on-surface">
+                ₹385.00
+              </td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant text-[11px] font-semibold">
+<span class="material-symbols-outlined text-[12px]">currency_rupee</span> Cash
+                </span>
+</td>
+<td class="py-3 px-3 text-center">
+<button class="p-1.5 rounded-lg text-outline hover:text-primary hover:bg-surface-container transition-colors" title="Print Tax Invoice" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-3 px-3">
+<div class="font-mono-data text-mono-data font-semibold text-primary">#BLR-8919</div>
+<div class="text-[11px] text-outline">15:18 IST</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-semibold text-on-surface">Ananya Sen, 28F</div>
+<div class="text-[11px] text-outline">Dr. Priya Sharma</div>
+</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono-data text-[11px]">3 medicines</span>
+</td>
+<td class="py-3 px-3 text-right font-mono-data font-bold text-on-surface">
+                ₹2,120.00
+              </td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant text-[11px] font-semibold">
+<span class="material-symbols-outlined text-[12px]">qr_code_2</span> UPI
+                </span>
+</td>
+<td class="py-3 px-3 text-center">
+<button class="p-1.5 rounded-lg text-outline hover:text-primary hover:bg-surface-container transition-colors" title="Print Tax Invoice" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-3 px-3">
+<div class="font-mono-data text-mono-data font-semibold text-primary">#BLR-8918</div>
+<div class="text-[11px] text-outline">14:55 IST</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-semibold text-on-surface">M. Narayana, 67M</div>
+<div class="text-[11px] text-outline">Dr. Ashok Hegde (Endo)</div>
+</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono-data text-[11px]">6 medicines</span>
+</td>
+<td class="py-3 px-3 text-right font-mono-data font-bold text-on-surface">
+                ₹4,870.00
+              </td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface text-[11px] font-semibold">
+<span class="material-symbols-outlined text-[12px]">credit_card</span> Card
+                </span>
+</td>
+<td class="py-3 px-3 text-center">
+<button class="p-1.5 rounded-lg text-outline hover:text-primary hover:bg-surface-container transition-colors" title="Print Tax Invoice" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pt-4 flex items-center justify-between text-label-md text-label-md text-on-surface-variant">
+<span>Showing 4 of 142 completed counter bills</span>
+<button class="text-primary hover:underline font-semibold flex items-center gap-1" type="button">
+<span>Detailed Sales Audit</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</button>
+</div>
+</div>
+<!-- Right Column: Critical Inventory & Expiry Alerts Triage (5 Cols) -->
+<div class="lg:col-span-5 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between pb-4">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-[22px]">notification_important</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Critical Inventory &amp; Expiry Alerts</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Immediate action requested for safety compliance</p>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-mono-data text-[11px] font-bold">4 Actionable</span>
+</div>
+<!-- Actionable Alert Cards Stack -->
+<div class="space-y-space-sm overflow-y-auto">
+<!-- Item 1: Dolo 650 Expired -->
+<div class="p-space-md rounded-xl bg-error-container/40 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="px-1.5 py-0.5 rounded bg-error text-on-error font-mono-data text-[10px] font-bold uppercase tracking-wider">Expired 2d ago</span>
+<span class="font-mono-data text-[11px] text-on-surface-variant">Rack A-14 • Batch #D902</span>
+</div>
+<div class="font-headline-sm text-headline-sm font-semibold text-on-surface">Paracetamol 650mg (Dolo 650)</div>
+<div class="font-body-sm text-body-sm text-on-error-container font-medium">8 Strips in shelf. Immediate quarantine mandated.</div>
+</div>
+<button class="px-3 py-2 rounded-lg bg-error text-on-error hover:opacity-90 font-label-md text-label-md font-semibold transition-opacity flex items-center justify-center gap-1.5 whitespace-nowrap shadow-sm" onclick="quarantineItem('Dolo 650', 'D902')" type="button">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span>Quarantine</span>
+</button>
+</div>
+<!-- Item 2: Augmentin 625 Duo Low Stock -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="px-1.5 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-mono-data text-[10px] font-bold uppercase tracking-wider">Low Stock</span>
+<span class="font-mono-data text-[11px] text-outline">Rack B-08 • GlaxoSmithKline</span>
+</div>
+<div class="font-headline-sm text-headline-sm font-semibold text-on-surface">Augmentin 625 Duo (Amoxyclav)</div>
+<div class="font-body-sm text-body-sm text-error font-medium">Only 4 strips left (Threshold limit: 20 strips)</div>
+</div>
+<button class="px-3 py-2 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1.5 whitespace-nowrap shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+<span>Reorder PO</span>
+</button>
+</div>
+<!-- Item 3: Pantocid 40mg Expiry in 14 days -->
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono-data text-[10px] font-bold uppercase tracking-wider">Expiring 14 Days</span>
+<span class="font-mono-data text-[11px] text-outline">Batch #P441 • 30 Strips</span>
+</div>
+<div class="font-headline-sm text-headline-sm font-semibold text-on-surface">Pantocid 40mg (Pantoprazole)</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Sun Pharma • Eligible for Vendor Return credit</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-2.5 py-2 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container-high font-label-sm text-label-sm font-semibold transition-colors" type="button">
+              Return Vendor
+            </button>
+<button class="px-2.5 py-2 rounded-lg bg-surface-container-lowest text-primary hover:bg-primary-container hover:text-on-primary-container font-label-sm text-label-sm font-semibold transition-colors" type="button">
+              Clearance
+            </button>
+</div>
+</div>
+<!-- Item 4: Azithral 500mg Reorder Trigger -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="px-1.5 py-0.5 rounded bg-tertiary/10 text-tertiary font-mono-data text-[10px] font-bold uppercase tracking-wider">Schedule H1</span>
+<span class="font-mono-data text-[11px] text-outline">Alembic Pharma</span>
+</div>
+<div class="font-headline-sm text-headline-sm font-semibold text-on-surface">Azithral 500mg (Azithromycin)</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">12 strips remaining. Weekly burn rate: 35 strips.</div>
+</div>
+<button class="px-3 py-2 rounded-lg bg-surface-container-highest text-on-surface hover:bg-surface-container-high font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1.5 whitespace-nowrap" type="button">
+<span class="material-symbols-outlined text-[16px]">playlist_add</span>
+<span>Fast Order</span>
+</button>
+</div>
+</div>
+<!-- Quick Triage Footer -->
+<div class="pt-3 flex items-center justify-between text-label-sm text-label-sm text-outline">
+<span>Automatic stock sync: 4 minutes ago</span>
+<a class="text-primary hover:underline font-semibold flex items-center gap-0.5" data-path="batches-expiry" href="#">
+<span>Go to Batches Central</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Interactive Quarantine Confirmation Modal (Hidden by default) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-inverse-surface/50 backdrop-blur-sm hidden transition-opacity" id="quarantineModal">
+<div class="bg-surface-container-lowest rounded-xl max-w-md w-full p-space-lg shadow-xl space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-error">
+<span class="material-symbols-outlined text-[24px]">lock</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Drug Quarantine Order</h3>
+</div>
+<button class="text-outline hover:text-on-surface p-1 rounded-lg" onclick="closeQuarantineModal()" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-space-md rounded-lg bg-error-container/30 text-on-error-container space-y-1 font-body-sm text-body-sm">
+<p class="font-bold text-error">Warning: Compliance &amp; Health Hazard</p>
+<p>Quarantining removes batches from active POS catalog, preventing inadvertent barcode scanning.</p>
+</div>
+<div class="space-y-2 text-body-sm font-body-sm">
+<div class="flex justify-between py-1 bg-surface-container-low px-3 rounded">
+<span class="text-outline">Drug Item:</span>
+<span class="font-semibold text-on-surface" id="quarantineDrugName">Paracetamol 650mg (Dolo 650)</span>
+</div>
+<div class="flex justify-between py-1 bg-surface-container-low px-3 rounded">
+<span class="text-outline">Batch Number:</span>
+<span class="font-mono-data font-semibold text-on-surface" id="quarantineBatchId">#D902</span>
+</div>
+<div class="flex justify-between py-1 bg-surface-container-low px-3 rounded">
+<span class="text-outline">Target Bin:</span>
+<span class="font-mono-data text-error font-semibold">Biohazard Vault Red-01</span>
+</div>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface font-semibold mb-1">Pharmacist Certification / Notes</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest" placeholder="Logged by Dr. Priya Sharma, MCI #64821" type="text" value="Logged by Dr. Priya Sharma, MCI #64821"/>
+</div>
+<div class="flex items-center justify-end gap-2 pt-2">
+<button class="px-4 py-2 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-container-high transition-colors" onclick="closeQuarantineModal()" type="button">
+          Cancel
+        </button>
+<button class="px-4 py-2 rounded-lg bg-error text-on-error font-label-md text-label-md font-semibold hover:opacity-90 transition-opacity shadow-sm" onclick="confirmQuarantineAction()" type="button">
+          Confirm Lockdown
+        </button>
+</div>
+</div>
+</div>
+<!-- Toast Notification Container for Micro-interactions -->
+<div class="fixed bottom-6 right-6 z-50 max-w-sm p-4 rounded-xl bg-inverse-surface text-inverse-on-surface shadow-xl flex items-center gap-3 transform translate-y-20 opacity-0 transition-all pointer-events-none" id="toastNotification">
+<span class="material-symbols-outlined text-tertiary-fixed text-[24px]">task_alt</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold" id="toastTitle">Action Completed</span>
+<span class="font-body-sm text-body-sm text-inverse-on-surface/80" id="toastMessage">Batch successfully moved to quarantine bin.</span>
+</div>
+</div>
+</div>
+<script>
+  // Date filter interactive pill switching
+  document.querySelectorAll('.date-filter').forEach(button => {
+    button.addEventListener('click', function() {
+      document.querySelectorAll('.date-filter').forEach(btn => {
+        btn.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+        btn.classList.add('text-on-surface-variant');
+      });
+      this.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+      this.classList.remove('text-on-surface-variant');
+      showToast('Date Filter Updated', 'Dashboard re-indexed for: ' + this.textContent.trim());
+    });
+  });
+
+  // Quarantine Modal handling
+  function openQuarantineModal() {
+    const modal = document.getElementById('quarantineModal');
+    if (modal) modal.classList.remove('hidden');
+  }
+
+  function closeQuarantineModal() {
+    const modal = document.getElementById('quarantineModal');
+    if (modal) modal.classList.add('hidden');
+  }
+
+  function quarantineItem(name, batch) {
+    document.getElementById('quarantineDrugName').innerText = name;
+    document.getElementById('quarantineBatchId').innerText = '#' + batch;
+    openQuarantineModal();
+  }
+
+  function confirmQuarantineAction() {
+    closeQuarantineModal();
+    showToast('Batch Quarantined', 'Item sealed & removed from POS counter inventory.');
+  }
+
+  function showToast(title, message) {
+    const toast = document.getElementById('toastNotification');
+    const toastTitle = document.getElementById('toastTitle');
+    const toastMessage = document.getElementById('toastMessage');
+    
+    if (toast && toastTitle && toastMessage) {
+      toastTitle.innerText = title;
+      toastMessage.innerText = message;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 3500);
+    }
+  }
+</script></main></div></body></html>
